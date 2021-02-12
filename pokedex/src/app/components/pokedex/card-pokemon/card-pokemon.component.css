@@ -1,0 +1,9 @@
+.imgConfig {
+    padding: 15px 15px 15px 15px;
+}
+
+mdb-card-title {
+    text-align: center;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
