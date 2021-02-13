@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  collapsed = true;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleCollapsed(): void {
+    this.collapsed = !this.collapsed;
+  }
 }

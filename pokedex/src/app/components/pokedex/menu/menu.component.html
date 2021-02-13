@@ -1,85 +1,25 @@
 <div class="container fixed">
-    <nav class="navbar navbar-expand-lg navbar-dark colorbar">
-      <a class="navbar-brand" href="#">Pokémons</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark colorbar">
+    <div class="container-fluid">
+      <a routerLink="/" class="navbar-brand">Pokémons</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="collapsed = !this.collapsed">
         <span class="navbar-toggler-icon"></span>
       </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Kanto <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Jotho</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Hoen</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-
-
-    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Brand</a>
-
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <!-- Navbar dropdown -->
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <!-- Dropdown menu -->
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-            >Disabled</a
-          >
-        </li>
-      </ul>
+      <div id="navbarSupportedContent" [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }">
+        <ul class="navbar-nav ml-auto">
+          <li routerLinkActive="active" class="nav-item">
+            <a routerLink="/LINK_1" class="nav-link"> Kanto </a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+            <a routerLink="/LINK_2" class="nav-link"> Jotho </a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+            <a routerLink="/LINK_2" class="nav-link"> Hoen </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-<!-- Navbar -->
+  </nav>
 </div>
