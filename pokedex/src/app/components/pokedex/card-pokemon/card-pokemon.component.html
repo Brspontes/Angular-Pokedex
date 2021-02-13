@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let pokemon of pokemons; index as i">
+            <mdb-card>
+                <mdb-card-img class="imgConfig" *ngIf="i <= 8" src="{{url}}/00{{i + 1}}.png" alt="pokemon image"></mdb-card-img>
+                <mdb-card-img class="imgConfig" *ngIf="i >= 9 && i < 98" src="{{url}}/0{{i + 1}}.png" alt="pokemon image"></mdb-card-img>
+                <mdb-card-img class="imgConfig" *ngIf="i > 99" src="{{url}}/{{i + 1}}.png" alt="pokemon image"></mdb-card-img>
+                <mdb-card-body>
+                  <mdb-card-title>
+                    <h4 class="capitalize">{{ pokemon.name }}</h4>
+                  </mdb-card-title>
+                </mdb-card-body>
+              </mdb-card>
+              <br />
+        </div>
+    </div>
+</div>
