@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -7,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  collapsed = true;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  toggleCollapsed(): void {
+    this.collapsed = !this.collapsed;
+  }
 }
