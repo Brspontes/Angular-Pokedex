@@ -7,3 +7,7 @@ mdb-card-title {
     text-decoration: underline;
     text-transform: capitalize;
 }
+
+.espacamentoTexto {
+    padding-right: 10px;
+}
