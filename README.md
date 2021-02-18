@@ -19,3 +19,5 @@ ng serve
 
 ## Usage
 Go to [Local](http://localhost:4200/)
+
+![pokedex](https://user-images.githubusercontent.com/14333695/108355629-d6bce180-71c9-11eb-944a-e4739ef1c978.png)
