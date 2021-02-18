@@ -11,13 +11,19 @@ import { CardPokemonComponent } from './components/pokedex/card-pokemon/card-pok
 import { HeaderComponent } from './components/pokedex/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/pokedex/menu/menu.component';
+import { KantoComponent } from './components/pokedex/region/kanto/kanto.component';
+import { JothoComponent } from './components/pokedex/region/jotho/jotho.component';
+import { HoenComponent } from './components/pokedex/region/hoen/hoen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardPokemonComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    KantoComponent,
+    JothoComponent,
+    HoenComponent
   ],
   imports: [
     BrowserModule,

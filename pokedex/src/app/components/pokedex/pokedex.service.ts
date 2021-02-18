@@ -1,5 +1,3 @@
-import { environment } from './../../../environments/environment.prod';
-import { PokemonKanto } from './../../models/pokemonModel';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http'
@@ -12,7 +10,7 @@ export class PokedexService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPokemonsKanto(): Observable<any> {
-    return this.http.get<any>(`${environment.pokemonKanto}`).pipe()
+  getAllPokemonsKanto(url: string): Observable<any> {
+    return this.http.get<any>(url).pipe()
   }
 }
