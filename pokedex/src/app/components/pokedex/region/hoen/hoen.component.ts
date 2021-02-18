@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonKanto } from 'src/app/models/pokemonModel';
+import { environment } from 'src/environments/environment';
+import { PokedexService } from '../../pokedex.service';
 
 @Component({
   selector: 'app-hoen',
@@ -8,10 +11,18 @@ import { Component, OnInit } from '@angular/core';
 export class HoenComponent implements OnInit {
 
   region: string = 'hoenn'
+  public pokemons: PokemonKanto[]
 
-  constructor() { }
+  constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
+    this.pokedexService.getAllPokemonsKanto(environment.pokemonHoenn)
+    .subscribe(
+      success => {
+        console.log(success.results),
+          this.pokemons = success.results
+      },
+      error => console.log(error)
+    )
   }
-
 }

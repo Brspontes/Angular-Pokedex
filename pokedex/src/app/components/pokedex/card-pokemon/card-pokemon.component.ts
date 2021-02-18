@@ -12,7 +12,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardPokemonComponent implements OnInit {
 
   @Input() region: string
-
+  @Input() pokemon: string
+  @Input() iteration: number
+  
   public pokemons: PokemonKanto[]
   public url = environment.linkCdn
   public numberJotho: number = 152
