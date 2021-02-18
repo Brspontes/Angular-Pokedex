@@ -1,8 +1,8 @@
 import { environment } from './../../../../environments/environment.prod';
 import { PokemonKanto } from './../../../models/pokemonModel';
 import { PokedexService } from './../pokedex.service';
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-card-pokemon',
@@ -11,22 +11,33 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class CardPokemonComponent implements OnInit {
 
+  @Input() region: string
+
   public pokemons: PokemonKanto[]
   public url = environment.linkCdn
+  public numberJotho: number = 152
 
-  constructor(private pokedexService: PokedexService, private router: ActivatedRoute,) {}
+  constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
+    if(this.region === 'kanto')
+    {
+      this.request(environment.pokemonKanto)
+    }
+    else if(this.region === 'jotho') 
+    {
+      this.request(environment.pokemonJotho)
+    }
+  }
 
-    console.log(this.router)
-
-    this.pokedexService.getAllPokemonsKanto()
-      .subscribe(
-        success => {
-          console.log(success.results),
-            this.pokemons = success.results
-        },
-        error => console.log(error)
-      )
+  private request(url: string) {
+    this.pokedexService.getAllPokemonsKanto(url)
+        .subscribe(
+          success => {
+            console.log(success.results),
+              this.pokemons = success.results
+          },
+          error => console.log(error)
+        )
   }
 }
