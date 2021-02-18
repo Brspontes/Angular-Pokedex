@@ -1,1 +1,8 @@
-<app-card-pokemon [region]="region"></app-card-pokemon>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 shadow p-3 mb-5" *ngFor="let pokemon of pokemons; index as i">
+      <app-card-pokemon [region]="region" [pokemon]="pokemon.name" [iteration]="i"></app-card-pokemon>
+      <br />
+    </div>
+  </div>
+</div>
