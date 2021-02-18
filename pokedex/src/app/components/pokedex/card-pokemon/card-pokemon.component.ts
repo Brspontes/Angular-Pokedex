@@ -1,4 +1,4 @@
-import { environment } from './../../../../environments/environment.prod';
+import { environment } from './../../../../environments/environment';
 import { PokemonKanto } from './../../../models/pokemonModel';
 import { PokedexService } from './../pokedex.service';
 import { Component, Input, OnInit } from '@angular/core';
@@ -16,6 +16,7 @@ export class CardPokemonComponent implements OnInit {
   public pokemons: PokemonKanto[]
   public url = environment.linkCdn
   public numberJotho: number = 152
+  public numberHoenn: number = 252
 
   constructor(private pokedexService: PokedexService) { }
 
@@ -27,6 +28,10 @@ export class CardPokemonComponent implements OnInit {
     else if(this.region === 'jotho') 
     {
       this.request(environment.pokemonJotho)
+    }
+    else if (this.region === 'hoenn')
+    {
+      this.request(environment.pokemonHoenn)
     }
   }
 

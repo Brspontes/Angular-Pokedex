@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HoenComponent implements OnInit {
 
+  region: string = 'hoenn'
+
   constructor() { }
 
   ngOnInit(): void {
