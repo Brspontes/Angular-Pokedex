@@ -1,6 +1,7 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './../modal/modal.component';
 import { environment } from './../../../../environments/environment';
 import { PokemonKanto } from './../../../models/pokemonModel';
-import { PokedexService } from './../pokedex.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 
@@ -20,31 +21,11 @@ export class CardPokemonComponent implements OnInit {
   public numberJotho: number = 152
   public numberHoenn: number = 252
 
-  constructor(private pokedexService: PokedexService) { }
+  constructor(private modalService: NgbModal) { }
 
-  ngOnInit(): void {
-    if(this.region === 'kanto')
-    {
-      this.request(environment.pokemonKanto)
-    }
-    else if(this.region === 'jotho') 
-    {
-      this.request(environment.pokemonJotho)
-    }
-    else if (this.region === 'hoenn')
-    {
-      this.request(environment.pokemonHoenn)
-    }
-  }
+  ngOnInit(): void {}
 
-  private request(url: string) {
-    this.pokedexService.getAllPokemonsKanto(url)
-        .subscribe(
-          success => {
-            console.log(success.results),
-              this.pokemons = success.results
-          },
-          error => console.log(error)
-        )
+  openModal(): void {
+    this.modalService.open(ModalComponent,  { centered: true, backdropClass: 'light-blue-backdrop' })
   }
 }

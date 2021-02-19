@@ -14,6 +14,8 @@ import { MenuComponent } from './components/pokedex/menu/menu.component';
 import { KantoComponent } from './components/pokedex/region/kanto/kanto.component';
 import { JothoComponent } from './components/pokedex/region/jotho/jotho.component';
 import { HoenComponent } from './components/pokedex/region/hoen/hoen.component';
+import { ModalComponent } from './components/pokedex/modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { HoenComponent } from './components/pokedex/region/hoen/hoen.component';
     MenuComponent,
     KantoComponent,
     JothoComponent,
-    HoenComponent
+    HoenComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { HoenComponent } from './components/pokedex/region/hoen/hoen.component';
     MDBBootstrapModule.forRoot(),
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
