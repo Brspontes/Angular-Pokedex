@@ -1,10 +1,8 @@
 <mdb-card *ngIf="region === 'kanto'">
-  <mdb-card-img class="imgConfig" *ngIf="iteration <= 8" src="{{url}}/00{{iteration + 1}}.png" alt="pokemon {{ pokemon }} image"></mdb-card-img>
-  <mdb-card-img class="imgConfig" *ngIf="iteration >= 9 && iteration < 98" src="{{url}}/0{{iteration + 1}}.png" alt="pokemon {{ pokemon }} image"></mdb-card-img>
-  <mdb-card-img class="imgConfig" *ngIf="iteration > 99" src="{{url}}/{{iteration + 1}}.png" alt="pokemon {{ pokemon }} image"></mdb-card-img>
+  <mdb-card-img class="imgConfig" src="{{ pokemon.imgUrl }}" alt="pokemon {{ pokemon.name }} image"></mdb-card-img>
   <mdb-card-body>
     <mdb-card-title>
-      <a (click)="openModal()"><h4 class="capitalize"><img src="assets/pokeball.png" width="30px" class="espacamentoTexto">{{ pokemon }}</h4></a>
+      <a (click)="openModal()"><h4 class="capitalize"><img src="assets/pokeball.png" width="30px" class="espacamentoTexto">{{ pokemon.name }}</h4></a>
     </mdb-card-title>
   </mdb-card-body>
 </mdb-card>
