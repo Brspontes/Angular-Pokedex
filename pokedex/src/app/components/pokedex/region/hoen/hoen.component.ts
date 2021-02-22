@@ -1,3 +1,4 @@
+import { PokemonWithImgUrl } from './../../../../models/pokemonModel';
 import { Component, OnInit } from '@angular/core';
 import { PokemonKanto } from 'src/app/models/pokemonModel';
 import { environment } from 'src/environments/environment';
@@ -10,8 +11,12 @@ import { PokedexService } from '../../pokedex.service';
 })
 export class HoenComponent implements OnInit {
 
+  aux: number = 0
   region: string = 'hoenn'
   public pokemons: PokemonKanto[]
+  public numberHoenn: number = 252
+  public pokemonsWithUrl: PokemonWithImgUrl[] = []
+  public pokemonWithUrl: PokemonWithImgUrl
 
   constructor(private pokedexService: PokedexService) { }
 
@@ -21,8 +26,24 @@ export class HoenComponent implements OnInit {
       success => {
         console.log(success.results),
           this.pokemons = success.results
+          this.addUrl()
       },
       error => console.log(error)
     )
+  }
+
+  private addUrl(): void {
+    if(this.pokemons) {
+      this.pokemons.forEach(element => {
+        this.pokemonWithUrl = new PokemonWithImgUrl()
+
+        this.pokemonWithUrl.name = element.name
+        this.pokemonWithUrl.url = element.url
+        this.pokemonWithUrl.imgUrl = `${environment.linkCdn}/${this.numberHoenn + this.aux}.png`
+
+        this.pokemonsWithUrl.push(this.pokemonWithUrl)
+        this.aux++
+      });
+    }
   }
 }

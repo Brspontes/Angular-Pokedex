@@ -12,15 +12,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardPokemonComponent implements OnInit {
 
-  @Input() region: string
   @Input() pokemon: PokemonWithImgUrl
   @Input() iteration: number
   @Input() imgUrl: string
-  
-  public pokemons: PokemonKanto[]
-  public url = environment.linkCdn
-  public numberJotho: number = 152
-  public numberHoenn: number = 252
 
   constructor(private modalService: NgbModal) { }
 

@@ -11,7 +11,6 @@ import { PokemonKanto } from 'src/app/models/pokemonModel';
 export class KantoComponent implements OnInit {
 
   aux: number = 0
-  region: String = "kanto"
   public pokemons: PokemonKanto[]
   public pokemonsWithUrl: PokemonWithImgUrl[] = []
   public pokemonWithUrl: PokemonWithImgUrl
@@ -27,8 +26,6 @@ export class KantoComponent implements OnInit {
           },
           error => console.log(error)
         )
-
-      console.log(this.pokemonsWithUrl)
   }
 
   private addUrl(): void {
