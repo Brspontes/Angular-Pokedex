@@ -11,7 +11,6 @@ import { PokemonKanto } from 'src/app/models/pokemonModel';
 export class KantoComponent implements OnInit {
 
   aux: number = 0
-  region: String = "kanto"
   public pokemons: PokemonKanto[]
   public pokemonsWithUrl: PokemonWithImgUrl[] = []
   public pokemonWithUrl: PokemonWithImgUrl
@@ -24,11 +23,10 @@ export class KantoComponent implements OnInit {
           success => {
             this.pokemons = success.results
             this.addUrl()
+            console.log(this.pokemonsWithUrl)
           },
           error => console.log(error)
         )
-
-      console.log(this.pokemonsWithUrl)
   }
 
   private addUrl(): void {
@@ -49,9 +47,9 @@ export class KantoComponent implements OnInit {
   private imgUrl(index: number): string {
     if(index <= 8)
       return `${environment.linkCdn}/00${index + 1}.png`
-    else if (index >= 9 && index < 98)
+    else if (index >= 9 && index <= 98)
       return `${environment.linkCdn}/0${index + 1}.png`
-    else if (index > 99)
+    else if (index >= 99)
       return `${environment.linkCdn}/${index + 1}.png`
   }
 }

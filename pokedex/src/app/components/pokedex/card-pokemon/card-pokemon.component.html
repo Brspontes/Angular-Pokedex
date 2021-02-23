@@ -1,24 +1,8 @@
-<mdb-card *ngIf="region === 'kanto'">
+<mdb-card>
   <mdb-card-img class="imgConfig" src="{{ pokemon.imgUrl }}" alt="pokemon {{ pokemon.name }} image"></mdb-card-img>
   <mdb-card-body>
     <mdb-card-title>
-      <a (click)="openModal()"><h4 class="capitalize"><img src="assets/pokeball.png" width="30px" class="espacamentoTexto">{{ pokemon.name }}</h4></a>
-    </mdb-card-title>
-  </mdb-card-body>
-</mdb-card>
-<mdb-card *ngIf="region === 'jotho'">
-  <mdb-card-img class="imgConfig" src="{{url}}/{{numberJotho + iteration}}.png" alt="pokemon {{ pokemon }} image"></mdb-card-img>
-  <mdb-card-body>
-    <mdb-card-title>
-      <h4 class="capitalize"><img src="assets/pokeball.png" width="30px" class="espacamentoTexto">{{ pokemon }}</h4>
-    </mdb-card-title>
-  </mdb-card-body>
-</mdb-card>
-<mdb-card *ngIf="region === 'hoenn'">
-  <mdb-card-img class="imgConfig" src="{{url}}/{{numberHoenn + iteration}}.png" alt="pokemon {{ pokemon }} image"></mdb-card-img>
-  <mdb-card-body>
-    <mdb-card-title>
-      <h4 class="capitalize"><img src="assets/pokeball.png" width="30px" class="espacamentoTexto">{{ pokemon }}</h4>
+      <a (click)="openModal(pokemon)"><h4 class="capitalize"><img src="assets/pokeball.png" width="30px" class="espacamentoTexto">{{ pokemon.name }}</h4></a>
     </mdb-card-title>
   </mdb-card-body>
 </mdb-card>

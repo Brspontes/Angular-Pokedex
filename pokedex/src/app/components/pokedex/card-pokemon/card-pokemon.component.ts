@@ -1,7 +1,6 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './../modal/modal.component';
-import { environment } from './../../../../environments/environment';
-import { PokemonKanto, PokemonWithImgUrl } from './../../../models/pokemonModel';
+import { PokemonWithImgUrl } from './../../../models/pokemonModel';
 import { Component, Input, OnInit } from '@angular/core';
 
 
@@ -12,21 +11,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardPokemonComponent implements OnInit {
 
-  @Input() region: string
   @Input() pokemon: PokemonWithImgUrl
   @Input() iteration: number
   @Input() imgUrl: string
-  
-  public pokemons: PokemonKanto[]
-  public url = environment.linkCdn
-  public numberJotho: number = 152
-  public numberHoenn: number = 252
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {}
 
-  openModal(): void {
-    this.modalService.open(ModalComponent,  { centered: true, backdropClass: 'light-blue-backdrop' })
+  openModal(pokemon: PokemonWithImgUrl): void {
+    this.modalService.open(ModalComponent,  { centered: true, backdropClass: 'light-blue-backdrop', size:'xl' })
+      .componentInstance.pokemon = pokemon
   }
 }
