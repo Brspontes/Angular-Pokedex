@@ -8,3 +8,8 @@ export class PokemonWithImgUrl {
     url: String
     imgUrl: string
 }
+
+export class PokemonWeaknesses {
+    name: string
+    url: string
+}

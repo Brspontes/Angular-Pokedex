@@ -23,7 +23,6 @@ export class KantoComponent implements OnInit {
           success => {
             this.pokemons = success.results
             this.addUrl()
-            console.log(this.pokemonsWithUrl)
           },
           error => console.log(error)
         )
