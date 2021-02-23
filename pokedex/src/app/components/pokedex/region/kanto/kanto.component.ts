@@ -23,6 +23,7 @@ export class KantoComponent implements OnInit {
           success => {
             this.pokemons = success.results
             this.addUrl()
+            console.log(this.pokemonsWithUrl)
           },
           error => console.log(error)
         )
@@ -46,9 +47,9 @@ export class KantoComponent implements OnInit {
   private imgUrl(index: number): string {
     if(index <= 8)
       return `${environment.linkCdn}/00${index + 1}.png`
-    else if (index >= 9 && index < 98)
+    else if (index >= 9 && index <= 98)
       return `${environment.linkCdn}/0${index + 1}.png`
-    else if (index > 99)
+    else if (index >= 99)
       return `${environment.linkCdn}/${index + 1}.png`
   }
 }

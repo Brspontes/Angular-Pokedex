@@ -12,4 +12,8 @@ export class PokedexService {
   getAllPokemonsKanto(url: string): Observable<any> {
     return this.http.get<any>(url).pipe()
   }
+
+  getInfoPokemon(url: string): Observable<any> {
+    return this.http.get<any>(url).pipe()
+  }
 }
