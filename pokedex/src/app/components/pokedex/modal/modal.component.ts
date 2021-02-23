@@ -25,7 +25,6 @@ export class ModalComponent implements OnInit {
       .subscribe(success => { 
         this.response = success
         this.getWeakness()
-        console.log(this.pokemonWeaknesses)
       }, error => console.log(error))  
   }
 

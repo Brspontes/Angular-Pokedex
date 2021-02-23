@@ -16,6 +16,7 @@ import { JothoComponent } from './components/pokedex/region/jotho/jotho.componen
 import { HoenComponent } from './components/pokedex/region/hoen/hoen.component';
 import { ModalComponent } from './components/pokedex/modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartComponent } from './components/general/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     KantoComponent,
     JothoComponent,
     HoenComponent,
-    ModalComponent
+    ModalComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,6 @@ export class HoenComponent implements OnInit {
     this.pokedexService.getAllPokemonsKanto(environment.pokemonHoenn)
     .subscribe(
       success => {
-        console.log(success.results),
           this.pokemons = success.results
           this.addUrl()
       },
