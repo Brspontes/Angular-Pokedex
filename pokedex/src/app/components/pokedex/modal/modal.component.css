@@ -11,6 +11,10 @@ ul li {
     font-weight: bold;
 }
 
+h5 {
+    padding-left: 1.2rem;
+}
+
 .grass {
     background: #32CD32;
 }
@@ -69,5 +73,24 @@ ul li {
 
 .bug {
     background: #458B00;
+    color: white;
+}
+
+.dark {
+    background: #363636;
+    color: white;
+}
+
+.ghost {
+    background: #B5B5B5;
+    color: white;
+}
+
+.ice {
+    background: #C6E2FF;
+}
+
+.steel {
+    background: #6C7B8B;
     color: white;
 }

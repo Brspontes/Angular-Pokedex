@@ -16,4 +16,8 @@ export class PokedexService {
   getInfoPokemon(url: string): Observable<any> {
     return this.http.get<any>(url).pipe()
   }
+
+  getWeaknessesPokemon(url: string): Observable<any> {
+    return this.http.get<any>(url).pipe()
+  }
 }
