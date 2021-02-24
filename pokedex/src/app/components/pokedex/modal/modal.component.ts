@@ -25,6 +25,7 @@ export class ModalComponent implements OnInit {
       .subscribe(success => { 
         this.response = success
         this.getWeakness()
+        console.log(this.response)
       }, error => console.log(error))  
   }
 
